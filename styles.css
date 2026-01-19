@@ -1,0 +1,18 @@
+/* Small custom styles alongside Tailwind utilities */
+:root {
+  --transition-fast: 150ms;
+}
+
+body {
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+/* Make form controls look a bit nicer across themes (Tailwind covers most cases) */
+input, textarea {
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.12);
+  border-color: rgba(99,102,241,1);
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Minimal Tailwind Site</title>
+
+  <!-- Tailwind CDN (no build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Optional small custom stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
+
+  <header class="bg-white dark:bg-gray-800 shadow">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+      <h1 class="text-xl font-semibold">Minimal Site</h1>
+      <nav>
+        <ul class="flex gap-4">
+          <li><a href="#features" class="text-sm hover:underline">Features</a></li>
+          <li><a href="#contact" class="text-sm hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 py-12 flex-1">
+    <section class="text-center">
+      <h2 class="text-3xl font-bold mb-4">Hello — Tailwind + JavaScript</h2>
+      <p class="mb-6 text-gray-600 dark:text-gray-300">A tiny starter that uses the Tailwind CDN and plain JS for interactivity.</p>
+
+      <div class="flex items-center justify-center gap-4">
+        <button id="cta" class="px-5 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 transition">Click me</button>
+        <button id="themeToggle" class="px-4 py-2 rounded border hover:bg-gray-100 dark:hover:bg-gray-700 transition">Toggle dark</button>
+      </div>
+
+      <p id="message" class="mt-6 text-sm text-gray-500 dark:text-gray-400"></p>
+    </section>
+
+    <section id="features" class="mt-12 grid gap-6 sm:grid-cols-2">
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow">
+        <h3 class="font-semibold mb-2">Fast</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Uses Tailwind CDN — no build required.</p>
+      </div>
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow">
+        <h3 class="font-semibold mb-2">Interactive</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Small JavaScript file handles behavior.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="mt-12">
+      <h3 class="font-semibold mb-4">Contact</h3>
+      <form id="contactForm" class="grid gap-3 sm:grid-cols-2">
+        <input required name="name" placeholder="Name" class="col-span-2 sm:col-span-1 p-2 border rounded bg-white dark:bg-gray-700"/>
+        <input required name="email" placeholder="Email" class="col-span-2 sm:col-span-1 p-2 border rounded bg-white dark:bg-gray-700"/>
+        <textarea name="message" placeholder="Message" class="col-span-2 p-2 border rounded bg-white dark:bg-gray-700"></textarea>
+        <button type="submit" class="col-span-2 px-4 py-2 bg-green-600 text-white rounded">Send</button>
+      </form>
+      <p id="formStatus" class="mt-3 text-sm text-gray-500 dark:text-gray-400"></p>
+    </section>
+  </main>
+
+  <footer class="max-w-4xl mx-auto px-6 py-6 text-center text-sm text-gray-500 dark:text-gray-400">
+    © <span id="year"></span> Minimal Tailwind Site
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

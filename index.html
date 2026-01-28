@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>ARTIST NAME — Painting Title</title>
     <meta name="description" content="Painting Title by ARTIST NAME." />
+
     <link rel="stylesheet" href="./styles.css" />
 
-    <!-- Keep this only if you are using main.js / Three.js -->
+    <!-- Import map so Three.js works on GitHub Pages without a build step -->
     <script type="importmap">
       {
         "imports": {
@@ -29,6 +30,7 @@
       </div>
 
       <nav class="nav" aria-label="Primary">
+        <a href="#playground">Playground</a>
         <a href="#painting">Painting</a>
         <a href="#about">Statement</a>
         <a href="#contact">Contact</a>
@@ -37,10 +39,21 @@
     </header>
 
     <main class="main">
+      <!-- THREE.JS PLAYGROUND (TOP CANVAS) -->
+      <section id="playground" class="playground" aria-label="Three.js playground">
+        <div class="playground-frame">
+          <canvas id="threeTop" class="three-top" aria-hidden="true"></canvas>
+          <div class="playground-overlay">
+            <span>Three.js Playground</span>
+            <small>Experiment canvas</small>
+          </div>
+        </div>
+      </section>
+
       <!-- PAINTING HERO -->
       <section id="painting" class="single">
         <div class="single-media">
-          <!-- Replace with your real image path -->
+          <!-- Put your image here: /assets/painting.jpg -->
           <img
             class="art-img"
             src="./assets/painting.jpg"
@@ -73,15 +86,7 @@
           </div>
 
           <div class="meta-note">
-            <small>
-              Shipping from NYC • Certificate of authenticity included • Custom framing optional
-            </small>
-          </div>
-
-          <!-- Optional: tiny Three.js accent (remove this block if you want ZERO 3D) -->
-          <div class="mini-visual single-accent" aria-label="Interactive accent">
-            <canvas id="scene" class="scene mini" aria-hidden="true"></canvas>
-            <div class="scene-overlay mini"><small>Three.js accent</small></div>
+            <small>Shipping from NYC • Certificate of authenticity included • Custom framing optional</small>
           </div>
         </aside>
       </section>
@@ -127,7 +132,6 @@
       <p>© <span id="year"></span> ARTIST NAME. Built on GitHub Pages.</p>
     </footer>
 
-    <!-- Keep this only if you created main.js -->
     <script type="module" src="./main.js"></script>
   </body>
 </html>

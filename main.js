@@ -4,37 +4,42 @@ import * as THREE from "three";
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Optional Three.js accent.
-// If you remove the canvas from index.html, this file can still stay.
-const canvas = document.getElementById("scene");
+// Top canvas playground
+const canvas = document.getElementById("threeTop");
+
 if (canvas) {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
   renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 
   const scene = new THREE.Scene();
 
-  const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 50);
-  camera.position.set(0, 0.2, 3);
+  const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+  camera.position.set(0, 0.4, 3.2);
 
-  const light1 = new THREE.DirectionalLight(0xffffff, 1.0);
-  light1.position.set(2, 2, 2);
-  scene.add(light1);
+  // Lights
+  const key = new THREE.DirectionalLight(0xffffff, 1.0);
+  key.position.set(2, 2, 2);
+  scene.add(key);
 
-  scene.add(new THREE.AmbientLight(0xffffff, 0.4));
+  scene.add(new THREE.AmbientLight(0xffffff, 0.35));
 
-  // Sculptural minimal object
-  const geo = new THREE.IcosahedronGeometry(0.85, 1);
-  const mat = new THREE.MeshStandardMaterial({
-    color: 0xffffff,
-    roughness: 0.45,
-    metalness: 0.1
-  });
-  const mesh = new THREE.Mesh(geo, mat);
+  // Demo geometry (swap this for your experiments)
+  const mesh = new THREE.Mesh(
+    new THREE.TorusKnotGeometry(0.7, 0.22, 180, 24),
+    new THREE.MeshStandardMaterial({
+      color: 0xffffff,
+      roughness: 0.35,
+      metalness: 0.15
+    })
+  );
   scene.add(mesh);
 
+  // Optional fog vibe
+  scene.fog = new THREE.Fog(0x000000, 6, 16);
+
   function resize() {
-    const w = canvas.clientWidth || 300;
-    const h = canvas.clientHeight || 180;
+    const w = canvas.clientWidth || 600;
+    const h = canvas.clientHeight || 320;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
@@ -45,8 +50,12 @@ if (canvas) {
 
   function tick(t) {
     const time = t * 0.001;
-    mesh.rotation.y = time * 0.35;
-    mesh.rotation.x = Math.sin(time * 0.4) * 0.08;
+
+    // Animation playground
+    mesh.rotation.y = time * 0.6;
+    mesh.rotation.x = Math.sin(time * 0.35) * 0.2;
+    mesh.position.y = Math.sin(time * 0.8) * 0.06;
+
     renderer.render(scene, camera);
     requestAnimationFrame(tick);
   }

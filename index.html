@@ -3,12 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>ARTIST NAME — Home</title>
-    <meta name="description" content="Portfolio and experiments by ARTIST NAME." />
+    <title>ARTIST NAME — Portfolio</title>
+    <meta name="description" content="Portfolio of works by ARTIST NAME." />
 
     <link rel="stylesheet" href="./styles.css" />
 
-    <!-- Import map so Three.js can be used as ES modules (good for GitHub Pages) -->
     <script type="importmap">
       {
         "imports": {
@@ -20,100 +19,104 @@
   </head>
 
   <body>
-    <a class="skip" href="#content">Skip to content</a>
+    <a class="skip" href="#work">Skip to work</a>
 
     <header class="header">
       <div class="brand">
         <div class="mark" aria-hidden="true"></div>
         <div>
           <h1 class="title">ARTIST NAME</h1>
-          <p class="tagline">Paintings • Installations • Digital Experiments</p>
+          <p class="tagline">Portfolio • Paintings • Digital</p>
         </div>
       </div>
 
       <nav class="nav" aria-label="Primary">
-        <a href="#work">Work</a>
+        <a class="active" href="#work">Work</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <a class="btn" href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
       </nav>
     </header>
 
-    <!-- HERO -->
-    <main id="content" class="main">
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="kicker">NEW SERIES</p>
-          <h2 class="hero-title">
-            Thresholds between realities — luminous figures, grounded bodies.
-          </h2>
-          <p class="hero-sub">
-            A portfolio space for paintings, prints, and interactive 3D sketches.
-            Built to host on GitHub Pages and ready for Three.js experiments.
-          </p>
-
-          <div class="hero-cta">
-            <a class="btn primary" href="#work">View work</a>
-            <a class="btn ghost" href="#contact">Commission / inquiries</a>
+    <main class="main">
+      <!-- PORTFOLIO HERO -->
+      <section class="portfolio-hero">
+        <div class="portfolio-head">
+          <div>
+            <p class="kicker">SELECTED WORK</p>
+            <h2 class="hero-title">A living archive of pieces + experiments.</h2>
+            <p class="hero-sub">
+              Click any piece (later) to open a detail page. This layout is built to scale:
+              add more rows, filters, and project pages over time.
+            </p>
           </div>
 
-          <ul class="meta">
-            <li><span>Location</span> New York City</li>
-            <li><span>Medium</span> Oil / Acrylic / Digital</li>
-            <li><span>Availability</span> Select commissions</li>
-          </ul>
-        </div>
-
-        <!-- Three.js friendly canvas slot -->
-        <div class="hero-visual" aria-label="Interactive preview">
-          <canvas id="scene" class="scene" aria-hidden="true"></canvas>
-          <div class="scene-overlay">
-            <p>Interactive preview (Three.js)</p>
-            <small>If it doesn’t load, your browser may block external module CDN.</small>
+          <!-- Three.js accent (small + optional) -->
+          <div class="mini-visual" aria-label="Interactive accent">
+            <canvas id="scene" class="scene mini" aria-hidden="true"></canvas>
+            <div class="scene-overlay mini">
+              <small>Three.js accent</small>
+            </div>
           </div>
         </div>
-      </section>
 
-      <!-- WORK GRID -->
-      <section id="work" class="section">
-        <div class="section-head">
-          <h3>Selected Work</h3>
-          <p>Swap these cards for your pieces. Add links to detail pages later.</p>
-        </div>
+        <!-- WORK GRID (front and center) -->
+        <section id="work" class="section work-top">
+          <div class="grid">
+            <a class="card link-card" href="#" aria-label="Open Work Title One">
+              <div class="thumb t1" role="img" aria-label="Artwork 1 placeholder"></div>
+              <div class="card-body">
+                <h4>Work Title One</h4>
+                <p>Oil on canvas • 2026</p>
+              </div>
+            </a>
 
-        <div class="grid">
-          <article class="card">
-            <div class="thumb t1" role="img" aria-label="Artwork 1 placeholder"></div>
-            <div class="card-body">
-              <h4>Work Title One</h4>
-              <p>Oil on canvas • 2026</p>
-            </div>
-          </article>
+            <a class="card link-card" href="#" aria-label="Open Work Title Two">
+              <div class="thumb t2" role="img" aria-label="Artwork 2 placeholder"></div>
+              <div class="card-body">
+                <h4>Work Title Two</h4>
+                <p>Mixed media • 2026</p>
+              </div>
+            </a>
 
-          <article class="card">
-            <div class="thumb t2" role="img" aria-label="Artwork 2 placeholder"></div>
-            <div class="card-body">
-              <h4>Work Title Two</h4>
-              <p>Mixed media • 2026</p>
-            </div>
-          </article>
+            <a class="card link-card" href="#" aria-label="Open Work Title Three">
+              <div class="thumb t3" role="img" aria-label="Artwork 3 placeholder"></div>
+              <div class="card-body">
+                <h4>Work Title Three</h4>
+                <p>Digital print • 2025</p>
+              </div>
+            </a>
 
-          <article class="card">
-            <div class="thumb t3" role="img" aria-label="Artwork 3 placeholder"></div>
-            <div class="card-body">
-              <h4>Work Title Three</h4>
-              <p>Digital print • 2025</p>
-            </div>
-          </article>
+            <a class="card link-card" href="#" aria-label="Open Work Title Four">
+              <div class="thumb t4" role="img" aria-label="Artwork 4 placeholder"></div>
+              <div class="card-body">
+                <h4>Work Title Four</h4>
+                <p>Installation study • 2025</p>
+              </div>
+            </a>
 
-          <article class="card">
-            <div class="thumb t4" role="img" aria-label="Artwork 4 placeholder"></div>
-            <div class="card-body">
-              <h4>Work Title Four</h4>
-              <p>Installation study • 2025</p>
-            </div>
-          </article>
-        </div>
+            <a class="card link-card" href="#" aria-label="Open Work Title Five">
+              <div class="thumb t1" role="img" aria-label="Artwork 5 placeholder"></div>
+              <div class="card-body">
+                <h4>Work Title Five</h4>
+                <p>Acrylic • 2025</p>
+              </div>
+            </a>
+
+            <a class="card link-card" href="#" aria-label="Open Work Title Six">
+              <div class="thumb t2" role="img" aria-label="Artwork 6 placeholder"></div>
+              <div class="card-body">
+                <h4>Work Title Six</h4>
+                <p>Study • 2024</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="work-footer">
+            <a class="btn ghost" href="#contact">Inquire about availability</a>
+            <a class="btn primary" href="#" target="_blank" rel="noreferrer">View full archive</a>
+          </div>
+        </section>
       </section>
 
       <!-- ABOUT -->
@@ -121,17 +124,16 @@
         <div>
           <h3>About</h3>
           <p>
-            Write a short artist statement here. Keep it human: what you explore,
-            what mediums you use, and what you’re currently making.
+            Replace this with a tight artist statement: what you explore, what you make,
+            and why. Keep it short — the work is the headline.
           </p>
-          <p>
-            This site is intentionally minimal, fast, and easy to expand—add a
-            /work folder, individual pages, and more Three.js sketches whenever.
+          <p class="muted">
+            Tip: add “Collections” (Paintings / Prints / Installations) as separate pages later.
           </p>
         </div>
 
         <div class="about-box">
-          <h4>Exhibitions / Press</h4>
+          <h4>Selected</h4>
           <ul>
             <li>2026 — Group Show, Venue Name</li>
             <li>2025 — Residency / Pop-up</li>
@@ -141,7 +143,6 @@
           <h4>Links</h4>
           <ul class="links">
             <li><a href="#" target="_blank" rel="noreferrer">Shop / Prints</a></li>
-            <li><a href="#" target="_blank" rel="noreferrer">Sound / DJ sets</a></li>
             <li><a href="#" target="_blank" rel="noreferrer">CV (PDF)</a></li>
           </ul>
         </div>
@@ -151,18 +152,18 @@
       <section id="contact" class="section contact">
         <div class="section-head">
           <h3>Contact</h3>
-          <p>Use a simple mailto or plug in Formspree later.</p>
+          <p>Simple + direct. Use mailto now; add a form later.</p>
         </div>
 
         <div class="contact-row">
-          <a class="btn primary" href="mailto:you@email.com?subject=Inquiry%20from%20your%20site">
+          <a class="btn primary" href="mailto:you@email.com?subject=Portfolio%20Inquiry">
             Email me
           </a>
-          <a class="btn ghost" href="https://www.youtube.com/" target="_blank" rel="noreferrer">
-            Video / Process
+          <a class="btn ghost" href="https://instagram.com/" target="_blank" rel="noreferrer">
+            Instagram
           </a>
           <a class="btn ghost" href="https://soundcloud.com/" target="_blank" rel="noreferrer">
-            SoundCloud
+            Sound
           </a>
         </div>
       </section>
